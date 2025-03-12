@@ -1,0 +1,167 @@
+@import './variables.css';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  letter-spacing: -0.2px;
+  background-color: #f8f9fa;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--gradient-primary);
+  transition: background var(--transition-speed) ease;
+  opacity: 0.9;
+}
+
+.app::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: radial-gradient(circle at top right, rgba(255,255,255,0.15) 0%, transparent 60%);
+}
+
+.app[data-mode="pomodoro"]::before {
+  background: var(--gradient-primary);
+}
+
+.app[data-mode="shortBreak"]::before {
+  background: var(--gradient-short-break);
+}
+
+.app[data-mode="longBreak"]::before {
+  background: var(--gradient-long-break);
+}
+
+.container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Animasyonlu Parçacıklar */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: float 15s infinite ease-in-out;
+  backdrop-filter: blur(2px);
+}
+
+.particle:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 20s;
+}
+
+.particle:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  top: 20%;
+  right: 15%;
+  animation-delay: 2s;
+  animation-duration: 18s;
+}
+
+.particle:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  bottom: 15%;
+  left: 20%;
+  animation-delay: 4s;
+  animation-duration: 16s;
+}
+
+.particle:nth-child(4) {
+  width: 70px;
+  height: 70px;
+  bottom: 25%;
+  right: 10%;
+  animation-delay: 6s;
+  animation-duration: 22s;
+}
+
+.particle:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 5%;
+  animation-delay: 8s;
+  animation-duration: 19s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(0) translateX(20px);
+  }
+  75% {
+    transform: translateY(20px) translateX(10px);
+  }
+}
+
+/* Glassmorphism Genel Sınıfı */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--border-radius);
+} 

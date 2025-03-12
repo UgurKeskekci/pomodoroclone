@@ -1,0 +1,47 @@
+:root {
+  /* Ana renkler */
+  --color-primary: #FF5A5F;
+  --color-primary-dark: #E04347;
+  --color-primary-light: #FF7A7F;
+  --color-primary-rgb: 255, 90, 95;
+  
+  /* Mola renkleri */
+  --color-short-break: #4ECDC4;
+  --color-long-break: #3F88C5;
+  --color-short-break-rgb: 78, 205, 196;
+  --color-long-break-rgb: 63, 136, 197;
+  
+  /* Nötr renkler */
+  --color-white: #ffffff;
+  --color-light: #f8f9fa;
+  --color-gray: #e9ecef;
+  --color-dark: #212529;
+  --color-text: #343a40;
+  
+  /* Yazı tipi */
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-heading: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* Boyutlar */
+  --container-width: 600px;
+  --border-radius: 16px;
+  
+  /* Geçişler */
+  --transition-speed: 0.3s;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.4);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --glass-blur: 15px;
+  
+  /* Kart Tasarımı */
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(255, 255, 255, 0.5);
+  --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  
+  /* Gradient Arkaplanlar */
+  --gradient-primary: linear-gradient(135deg, #E04347, #FF5A5F, #FF8A8F);
+  --gradient-short-break: linear-gradient(135deg, #3AAFA9, #4ECDC4, #7EEAE3);
+  --gradient-long-break: linear-gradient(135deg, #2A6F97, #3F88C5, #6FAAE0);
+} 

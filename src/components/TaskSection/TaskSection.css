@@ -1,0 +1,187 @@
+.task-section {
+  padding: 30px;
+  color: var(--color-dark);
+  margin-bottom: 30px;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+}
+
+.task-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.task-header h2 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: var(--font-heading);
+  color: var(--color-dark);
+  letter-spacing: -0.5px;
+}
+
+.task-list {
+  margin-bottom: 25px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.task-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.no-tasks {
+  text-align: center;
+  padding: 30px 0;
+  color: var(--color-dark);
+  opacity: 0.7;
+}
+
+.no-tasks p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.no-tasks-hint {
+  font-size: 14px !important;
+  opacity: 0.7;
+}
+
+.add-task-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  background-color: rgba(0, 0, 0, 0.05);
+  color: var(--color-dark);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  letter-spacing: -0.3px;
+}
+
+.glass-btn {
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.add-task-btn:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.plus-icon {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.add-task-form {
+  margin-top: 15px;
+}
+
+.add-task-form textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: var(--border-radius);
+  resize: vertical;
+  font-family: inherit;
+  margin-bottom: 15px;
+  font-size: 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.add-task-form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.cancel-btn, .save-btn {
+  padding: 10px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  letter-spacing: -0.3px;
+}
+
+.cancel-btn {
+  background-color: var(--color-light);
+}
+
+.save-btn {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.save-btn:hover, .cancel-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.save-icon {
+  margin-right: 8px;
+}
+
+/* Görev Özeti Bölümü */
+.task-summary {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-dark);
+  font-size: 15px;
+}
+
+.pomodoro-counter, .finish-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.pomodoro-counter span, .finish-time span {
+  opacity: 0.7;
+}
+
+.pomodoro-counter strong, .finish-time strong {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.time-hint {
+  font-size: 13px;
+  opacity: 0.6 !important;
+  margin-left: 2px;
+} 

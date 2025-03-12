@@ -1,0 +1,299 @@
+.timer-container {
+  padding: 35px;
+  margin-bottom: 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: var(--card-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--card-border);
+}
+
+.timer-header {
+  margin-bottom: 25px;
+  position: relative;
+  z-index: 5;
+}
+
+.session-number {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 5px;
+  opacity: 0.9;
+}
+
+.active-task-title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-dark);
+  margin: 0;
+  padding: 0 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.timer-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 5;
+}
+
+.tab {
+  padding: 10px 20px;
+  margin: 0 5px;
+  color: var(--color-dark);
+  opacity: 0.8;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.2px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 5;
+}
+
+.tab:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.tab.active {
+  background-color: rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.timer-display {
+  margin: 40px 0;
+  position: relative;
+}
+
+.timer-particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.time {
+  font-size: 130px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  letter-spacing: -1px;
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  color: var(--color-dark);
+}
+
+.session-info {
+  margin-top: 30px;
+  opacity: 0.8;
+  color: var(--color-dark);
+  position: relative;
+  z-index: 5;
+}
+
+.session-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Mod'a göre renk değişimi */
+.app[data-mode="shortBreak"] .session-number {
+  color: var(--color-short-break);
+}
+
+.app[data-mode="longBreak"] .session-number {
+  color: var(--color-long-break);
+}
+
+/* Havai fişek stilleri */
+.fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.firework {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+}
+
+.firework-1 {
+  top: 20%;
+  left: 30%;
+  transform: scale(1.2);
+}
+
+.firework-2 {
+  top: 30%;
+  right: 25%;
+  transform: scale(0.8);
+}
+
+.firework-3 {
+  bottom: 40%;
+  left: 45%;
+  transform: scale(1);
+}
+
+/* Animasyon için keyframes */
+@keyframes explode {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.firework circle {
+  transform-origin: center;
+}
+
+.firework line {
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+/* Mod'a göre havai fişek renkleri */
+.app[data-mode="pomodoro"] .firework circle,
+.app[data-mode="pomodoro"] .firework line {
+  stroke: var(--color-primary);
+  fill: var(--color-primary);
+}
+
+.app[data-mode="shortBreak"] .firework circle,
+.app[data-mode="shortBreak"] .firework line {
+  stroke: var(--color-short-break);
+  fill: var(--color-short-break);
+}
+
+.app[data-mode="longBreak"] .firework circle,
+.app[data-mode="longBreak"] .firework line {
+  stroke: var(--color-long-break);
+  fill: var(--color-long-break);
+}
+
+/* Konfeti stilleri */
+.confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 8px;
+  height: 16px;
+  opacity: 0;
+  animation: confetti 4s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes confetti {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+    opacity: 1;
+  }
+  
+  25% {
+    transform: translateY(25vh) rotate(180deg);
+    opacity: 1;
+  }
+  
+  50% {
+    transform: translateY(50vh) rotate(360deg);
+    opacity: 0.8;
+  }
+  
+  75% {
+    transform: translateY(75vh) rotate(540deg);
+    opacity: 0.6;
+  }
+  
+  100% {
+    transform: translateY(110vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Farklı konfeti şekilleri için */
+.confetti-piece:nth-child(even) {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.confetti-piece:nth-child(4n) {
+  width: 16px;
+  height: 8px;
+  border-radius: 2px;
+}
+
+/* Farklı sallanma animasyonları */
+.confetti-piece:nth-child(3n) {
+  animation-name: confetti-sway;
+}
+
+@keyframes confetti-sway {
+  0% {
+    transform: translateY(-10vh) rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  
+  50% {
+    transform: translateY(50vh) rotate(360deg) translateX(100px);
+    opacity: 0.8;
+  }
+  
+  100% {
+    transform: translateY(110vh) rotate(720deg) translateX(-100px);
+    opacity: 0;
+  }
+}
+
+/* Mod'a göre konfeti renkleri */
+.app[data-mode="pomodoro"] .confetti-piece {
+  background-color: var(--color-primary);
+}
+
+.app[data-mode="shortBreak"] .confetti-piece {
+  background-color: var(--color-short-break);
+}
+
+.app[data-mode="longBreak"] .confetti-piece {
+  background-color: var(--color-long-break);
+} 
